@@ -1,0 +1,35 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+#main {
+
+}
+
+.panel {
+  display: table;
+  width: 100vw;
+  height: 100vh; 
+  /*padding: 0;*/ 
+}
+.content {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.place {
+
+}
+.pulishtime:before {
+  content: "時間 : ";
+}
+.pm25 {
+  
+}
+.pm25:before {
+  content: "PM2.5 : ";
+}
+
+.status:before {
+  content: "狀態 : ";
+}

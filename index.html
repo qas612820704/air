@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taichaung</title>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../bower_components/Materialize/dist/css/materialize.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-app="pmApp" ng-controller="mainCtrl" ng-init="init()">
+  <div ng-repeat="data in datas" id="main">
+    <div class="panel" style="background-color: {{data.PM2p5 | color }}">
+      <div class="content">
+        <h1 class="county">{{data.County}}</h1>
+        <h2 class="place">{{data.SiteName}}</h2>
+        <h3 class="pm25">{{data.PM2p5}}</h3>
+        <h3 class="status">{{data.Status}}</h3>
+        <h4 class="pulishtime"> {{data.PublishTime}}</h4>
+        <a class='waves-effect waves-light btn  btn-large modal-trigger grey' href='#more' modal>
+          <i class="material-icons left">cloud</i>
+          Show Modal
+        </a>
+        <!-- Modal Structure -->
+        <div id="more" class="modal">
+            <div class="modal-content">
+                <h4>{{data.County}} {{data.SiteName}}</h4>
+                <p>CO: {{data.CO}}</p>
+                <p>FPMI: {{data.FPMI}}</p>
+                <p>MajorPollutant: {{data.MajorPollutant}}</p>
+                <p>NO: {{data.NO}}</p>
+                <p>NO2: {{data.NO2}}</p>
+                <p>NOx: {{data.NOx}}</p>
+                <p>O3: {{data.O3}}</p>
+                <p>PM2.5: {{data.PM2p5}}</p>
+                <p>PM10: {{data.PM10}}</p>
+                <p>PSI: {{data.PSI}}</p>
+                <p>SO2: {{data.SO2}}</p>
+                <p>Status: {{data.Status}}</p>
+                <p>WindDirec: {{data.WindDirec}}</p>
+                <p>WindSpeed: {{data.WindSpeed}}</p>
+                <p>PublishTime: {{data.PublishTime}}</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/Materialize/dist/js/materialize.min.js"></script>
+  <script src="../bower_components/angular-materialize/src/angular-materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
