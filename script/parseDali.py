@@ -3,14 +3,16 @@ import json
 import sched, time
 from datetime import datetime
 def getAQX(url):
-  retryCnt = 5
-  r = requests.get(url)
-  while retryCnt >0:
-      r = requests.get(url)
+  retryCnt = 0
+  while retryCnt < 6:
+    try:
+      r = requests.get(url,timeout=5)
       if r.status_code == 200:
         return r.text
+      retryCnt = retryCnt + 1
       print('Retry : {} '.format(retryCnt))
-      retryCnt = retryCnt -1
+    except Exception as e:
+      print (e)
   return False
 
 def exec_request(sc):
